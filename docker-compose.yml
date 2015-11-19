@@ -1,0 +1,13 @@
+web:
+  image: vincentchalamon/docker-symfony
+  ports:
+    - 8888:80
+  volumes:
+    - .:/var/www
+  tty: true
+db:
+  image: postgres
+  net: "host"
+  environment:
+    PG_USER: kaitlin
+    PG_DATABASE: github_time
